@@ -4,9 +4,11 @@
     <title></title>
 </head>
 <body>
-    <div class="container">
-       Name:  <input type="text" ng-model="name" /> {{ name }}
-
+    <div class="container" ng-init="Names=['Anubrij','Sudha','Aniket','Kaushal','Rahul','Shobhit','Akanksha']">
+       Name:  <input type="text" ng-model="nameText" /> {{ nameText }}
+        <ul>
+            <li ng-repeat="Name in Names | filter:nameText | orderBy:Name">{{ Name | uppercase }}</li>
+        </ul>
     </div>    
 </body>
 </html>
